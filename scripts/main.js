@@ -1,4 +1,5 @@
 import { resolveInitialTheme, nextTheme } from './theme.js';
+import { shouldPlay } from './video-autoplay.js';
 
 const THEME_STORAGE_KEY = 'kotoba-theme';
 
@@ -25,4 +26,31 @@ function initTheme() {
   }
 }
 
+function initLazyVideos() {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const videos = document.querySelectorAll('.js-lazy-video');
+
+  if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+    videos.forEach((video) => video.pause());
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target;
+        if (shouldPlay(entry.isIntersecting, prefersReducedMotion)) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      });
+    },
+    { threshold: 0.35 }
+  );
+
+  videos.forEach((video) => observer.observe(video));
+}
+
 initTheme();
+initLazyVideos();
