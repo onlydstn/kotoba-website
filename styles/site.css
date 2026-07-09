@@ -244,3 +244,14 @@ a {
     width: 220px;
   }
 }
+
+/* === LIGHT & DARK TRIPTYCH === */
+.feature__media-pair--triptych .media-frame {
+  width: min(110px, 30vw);
+}
+
+@media (min-width: 900px) {
+  .feature__media-pair--triptych .media-frame {
+    width: 160px;
+  }
+}
