@@ -765,6 +765,7 @@ with:
     <section class="hero">
       <div class="container hero__inner">
         <div class="hero__copy">
+          <p class="hero__mark" lang="ja"><ruby>言葉<rt>ことば</rt></ruby></p>
           <h1 class="hero__headline">Kotoba</h1>
           <p class="hero__blurb">A Japanese dictionary that feels like a well-made reference book — meanings, readings, real example sentences, animated stroke order, and native audio, fully offline.</p>
           <a class="button button--primary" href="#">Download on the App Store</a>
@@ -794,12 +795,29 @@ Append to `styles/site.css`:
   text-align: center;
 }
 
-.hero__headline {
-  font-family: var(--font-serif);
-  font-size: var(--kotoba-size-large-title);
+.hero__mark {
+  font-family: var(--font-serif-jp);
+  font-size: var(--kotoba-size-japanese-headline);
   font-weight: var(--weight-bold);
   line-height: var(--leading-tight);
   margin: 0;
+}
+
+.hero__mark rt {
+  font-family: var(--font-serif);
+  font-size: var(--kotoba-size-ruby);
+  font-weight: var(--weight-regular);
+  color: var(--color-text-secondary);
+  letter-spacing: 0.05em;
+}
+
+.hero__headline {
+  font-family: var(--font-serif);
+  font-size: var(--kotoba-size-title);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-tight);
+  margin: var(--space-3) 0 0;
 }
 
 .hero__blurb {
@@ -860,7 +878,7 @@ cd "/Users/onlydstn/Developer/KOTOBA Website"
 python3 -m http.server 4173
 ```
 
-Open `http://localhost:4173`. Confirm: the hero headline "Kotoba" renders in serif, the blurb and CTA pill appear below it, and the dashboard screenshot appears in a rounded glass-bordered frame. Resize the browser past 900px width — the layout should switch from stacked/centered to a two-column row with text on the left, image on the right.
+Open `http://localhost:4173`. Confirm: 言葉 renders large in serif with こと ば in small ruby text directly above it, "Kotoba" appears as a smaller secondary line beneath, the blurb and CTA pill appear below that, and the dashboard screenshot appears in a rounded glass-bordered frame. Resize the browser past 900px width — the layout should switch from stacked/centered to a two-column row with text on the left, image on the right.
 
 - [ ] **Step 4: Commit**
 
