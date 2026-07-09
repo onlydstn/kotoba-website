@@ -161,13 +161,27 @@
       </div>
     </section>
 
-    <section class="offline-band">
-      <!-- OFFLINE -->
+    <section id="offline" class="offline-band">
+      <div class="container offline-band__inner">
+        <svg class="offline-band__icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+        <p class="feature__eyebrow">Offline-first</p>
+        <h2 class="feature__headline">No connection required</h2>
+        <p class="feature__body">The full dictionary — JMdict, KANJIDIC2, example sentences, and stroke data — ships on-device. Look things up on a plane, underground, or anywhere else the network doesn't reach.</p>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <!-- FOOTER -->
+    <div class="container site-footer__inner">
+      <p class="site-footer__attribution">Dictionary data: JMdict &amp; KANJIDIC2 (CC BY-SA 4.0, EDRDG), Tatoeba (CC BY 2.0 FR), KanjiVG (CC BY-SA 3.0, U. Apel).</p>
+      <ul class="site-footer__links">
+        <li><a href="#">App Store</a></li>
+        <li><a href="#">Acknowledgements</a></li>
+      </ul>
+    </div>
   </footer>
 
   <script type="module" src="scripts/main.js"></script>
