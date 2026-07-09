@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test scripts",
+    "test": "node --test scripts/*.test.js",
     "preview": "python3 -m http.server 4173"
   }
 }
