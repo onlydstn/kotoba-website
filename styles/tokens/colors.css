@@ -1,0 +1,106 @@
+/* ============================================================
+   Kotoba — Color tokens
+   Ported 1:1 from KOTOBA/DesignSystem/Color+Tokens.swift.
+   Semantic, not raw-hex: sumi/washi (ink/paper) for text & background,
+   ai/shu/moss for brand + accent roles. Every token is a light/dark
+   pair; increased-contrast variants are included via prefers-contrast.
+   ============================================================ */
+
+:root {
+  color-scheme: light dark;
+
+  /* ---- Brand palette (ai / shu / moss) ---- */
+  --color-ai: #B8562F;
+  --color-shu: #C6402B;
+  --color-moss: #62785A;
+  --color-moss-background: rgb(98 120 90 / 0.14);
+
+  /* ---- Text roles (sumi ink / washi paper — not system gray) ---- */
+  --color-text-primary: #1B1815;
+  --color-text-secondary: #6E665A;
+  --color-text-tertiary: #9A8F7D;
+  --color-text-placeholder: #B3A896;
+
+  /* ---- Background & surface roles ---- */
+  --color-app-background: #F5EFE3;
+  --color-surface: #FFFFFF;
+  --color-chip-background: #EFE8D8;
+  --color-separator: #E4DCC8;
+
+  --color-on-brand: #FFFFFF;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-ai: #E8916D;
+    --color-shu: #FF6B4E;
+    --color-moss: #8FAE82;
+    --color-moss-background: rgb(143 174 130 / 0.14);
+
+    --color-text-primary: #F5EFE3;
+    --color-text-secondary: #A79E8F;
+    --color-text-tertiary: #7A7266;
+    --color-text-placeholder: #6E665A;
+
+    --color-app-background: #1B1815;
+    --color-surface: #252017;
+    --color-chip-background: #2E2A22;
+    --color-separator: #3A352C;
+
+    --color-on-brand: #1B1815;
+  }
+}
+
+[data-theme="dark"] {
+  --color-ai: #E8916D;
+  --color-shu: #FF6B4E;
+  --color-moss: #8FAE82;
+  --color-moss-background: rgb(143 174 130 / 0.14);
+  --color-text-primary: #F5EFE3;
+  --color-text-secondary: #A79E8F;
+  --color-text-tertiary: #7A7266;
+  --color-text-placeholder: #6E665A;
+  --color-app-background: #1B1815;
+  --color-surface: #252017;
+  --color-chip-background: #2E2A22;
+  --color-separator: #3A352C;
+  --color-on-brand: #1B1815;
+}
+[data-theme="light"] {
+  --color-ai: #B8562F;
+  --color-shu: #C6402B;
+  --color-moss: #62785A;
+  --color-moss-background: rgb(98 120 90 / 0.14);
+  --color-text-primary: #1B1815;
+  --color-text-secondary: #6E665A;
+  --color-text-tertiary: #9A8F7D;
+  --color-text-placeholder: #B3A896;
+  --color-app-background: #F5EFE3;
+  --color-surface: #FFFFFF;
+  --color-chip-background: #EFE8D8;
+  --color-separator: #E4DCC8;
+  --color-on-brand: #FFFFFF;
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --color-ai: #7A3618;
+    --color-shu: #8F2A1A;
+    --color-moss: #435A3D;
+    --color-text-primary: #1B1815;
+    --color-text-secondary: #453F35;
+    --color-text-tertiary: #6E665A;
+    --color-separator: #B9AE92;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-ai: #F5B294;
+      --color-shu: #FF8A6B;
+      --color-moss: #B3CBA8;
+      --color-text-primary: #F5EFE3;
+      --color-text-secondary: #D8D0C2;
+      --color-text-tertiary: #A79E8F;
+      --color-separator: #55503F;
+    }
+  }
+}
